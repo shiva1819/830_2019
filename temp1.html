@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+        }
+        #static {
+            position: static;
+            left: 100px;
+        }
+
+        #relative {
+            position: relative;
+            left: 100px;
+            top: 200px;
+            width: 500px;
+            height: 500px;
+            background: #ccc;
+            z-index: 1;
+        }
+
+        #absolute {
+            position: absolute;
+            left: 100px;
+            top: 300px;
+            background: lime;
+            z-index: 0;
+
+        }
+
+        #fixed {
+            position: fixed;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        #sticky {
+            position: sticky;
+            top: 0px;
+        }
+        #header{
+            background-image: url(image/1.jpg);
+            background-repeat: no-repeat;
+            /* background-position: 50% 0%; */
+            background-attachment: fixed;
+            height: 800px;
+            background-size: contain;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        asdas <i class="fab fa-facebook"></i>
+    </header>
+        <!-- Positions -->
+        <div id="static">
+            Static
+        </div>
+        <div id="relative">
+            Relative
+
+        </div>
+
+
+        <div id="absolute">
+            Absolute
+        </div>
+
+        <div id="fixed">
+            Fixid
+        </div>
+    
+    <p style="height:1000px;"></p>
+    <div id="sticky">
+        Sticky
+    </div>
+    <p style="height:1000px;"></p>
+</body>
+
+</html>
