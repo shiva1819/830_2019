@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            transition: 1s;
+        }
+
+        a:link {
+            color: red;
+        }
+
+        a:visited {
+            color: aqua;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        a:active {
+            color: lime;
+        }
+
+        button {
+            width: 100px;
+            text-align: center;
+            border: 1px solid;
+            background: lime;
+            line-height: 25px;
+        }
+
+        button:hover {
+            font-size: 20px;
+            color: #fff;
+            background: blueviolet;
+            letter-spacing: 10px;
+        }
+
+        #one {
+            width: 200px;
+            border: 1px solid red;
+            margin: auto;
+            text-align: center;
+            line-height: 30px;
+            position: relative;
+        }
+
+        #one::before {
+            content: "";
+            position: absolute;
+            left: -50px;
+            width: 50px;
+            top: 40%;
+            height: 4px;
+            background-color: red;
+        }
+
+        #one::after {
+            content: "";
+            position: absolute;
+            right: -50px;
+            width: 50px;
+            top: 40%;
+            height: 4px;
+            background-color: red;
+        }
+
+        #one::selection {
+            background: lime;
+            color: red;
+        }
+
+        /* ul li:first-child{
+            background: crimson;
+            margin-top: 2px;
+        }
+        ul li:last-child{
+            background: crimson;
+            margin-top: 2px;
+        } */
+        ul li:nth-child(4) {
+            background: crimson;
+            margin-top: 2px;
+        }
+
+        table{
+            width: 700px;
+            margin: auto;
+        }
+        
+        table,tr,td,th{
+            border-bottom:1px solid #ccc;
+            border-collapse: collapse;
+            text-align: center;
+            line-height: 30px;
+        }
+        thead tr{
+            background: #efefef;
+            color: blue;
+        }
+        th{
+            text-transform: uppercase;
+            font-size: 20px;
+        }
+        tbody tr:nth-child(odd){
+            background: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#"> HOME </a>
+    <button> Hello </button>
+
+    <div id="one"> SOME TEXT </div>
+
+    <ul>
+        <li>
+            ZERO
+        </li>
+        <li>
+            ONE
+        </li>
+        <li>
+            ONE
+        </li>
+        <li>
+            ONE
+        </li>
+        <li>
+            MIDDLE
+        </li>
+        <li>
+            ONE
+        </li>
+        <li>
+            ONE
+        </li>
+        <li>
+            LAST
+        </li>
+
+    </ul>
+
+
+
+    <table id="menu">
+        <thead>
+            <tr>
+                <th>
+                    sl no
+                </th>
+                <th>
+                    First name
+                </th>
+                <th>
+                    last name
+                </th>
+                <th>
+                    email
+                </th>
+                <th>
+                    contact
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Shiva
+                </td>
+                <td>
+                    Prasad
+                </td>
+                <td>
+                    shiva@mail.com
+                </td>
+                <td>
+                    121231231231
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Shiva
+                </td>
+                <td>
+                    Prasad
+                </td>
+                <td>
+                    shiva@mail.com
+                </td>
+                <td>
+                    121231231231
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Shiva
+                </td>
+                <td>
+                    Prasad
+                </td>
+                <td>
+                    shiva@mail.com
+                </td>
+                <td>
+                    121231231231
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Shiva
+                </td>
+                <td>
+                    Prasad
+                </td>
+                <td>
+                    shiva@mail.com
+                </td>
+                <td>
+                    121231231231
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                    1
+                </td>
+                <td>
+                    Shiva
+                </td>
+                <td>
+                    Prasad
+                </td>
+                <td>
+                    shiva@mail.com
+                </td>
+                <td>
+                    121231231231
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
