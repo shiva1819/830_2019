@@ -1,6 +1,6 @@
 
-        // alert();
-        // console.log(1231231);
+        alert();
+        console.log(1231231);
 
         // DATA TYPES.
 
