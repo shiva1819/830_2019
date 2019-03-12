@@ -33,7 +33,7 @@
         ];       
 
 
-        console.log(ACompany[1]['fav Color']);
+        console.log(ACompany[1]['fav Color'][1]);
         // Array Methods
         ACompany.push({"name":'Added',"contact":"890933224","fav Color":['Crimson', 'green']})
         ACompany.pop();

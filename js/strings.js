@@ -50,3 +50,5 @@ console.log(Math.round(9.2));
 console.log(Math.ceil(9.2));
 console.log(Math.floor(9.999999999));
 console.log( Math.ceil(Math.random() * 10));
+
+
