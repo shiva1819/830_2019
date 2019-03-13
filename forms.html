@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="#">
+        <div>
+            <label for="fname"> NAME </label> : <input type="text" name="fname" maxlength="10" id="Name" oninput="test.value = Name.value" required>
+        </div>
+        <div>
+            <label for="Password"> PASSWORD </label> : <input type="password" name="Password" placeholder="please Enter ur password">
+        </div>
+        <div>
+            <label for="email"> EMAIl </label> : <input type="email" name="email" value="dummy@gmail.com" readonly>
+        </div>
+        <div>
+            <label for="email"> NUMBER </label> : <input type="number" name="email" maxlength="10">
+        </div>
+        <div>
+            <label for="email"> DATE </label> : <input type="date" name="email">
+        </div>
+        <div>
+            <label for="email"> DATE </label> : <input type="color" name="email">
+        </div>
+        <div>
+            <label for="email"> DATE </label> : <input type="range" name="email">
+        </div>
+        <div>
+            <label for="email"> DATE </label> : <input type="url" name="email">
+        </div>
+        <div>
+            <label for="email"> DATE </label> : <input type="search" name="email">
+        </div>
+        <div>
+                <label for="email"> DATE </label> : <input type="file" name="email" accept="image/png, image/gif">
+            </div>
+        <div>
+            <label for="gender"> MALE </label> : <input type="radio" name="gender">
+            <label for="gender"> FEMALE </label> : <input type="radio" name="gender">
+        </div>
+        <div>
+            <label for="Hyd"> HYDERABAD </label> : <input type="checkbox" name="Hyd">
+            <label for="Bang"> BANGLORE </label> : <input type="checkbox" name="Bang">
+            <label for="Del"> DELHI </label> : <input type="checkbox" name="Del">
+        </div>
+        <div>
+            <textarea name="description" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <select name="someDrop" id="">
+                <option value="none"> -- Please Choose One -- </option>
+                <option value="1"> ONE </option>
+                <option value="1"> ONE </option>
+                <option value="1"> ONE </option>
+                <option value="1"> ONE </option>
+                <option value="1"> ONE </option>
+            </select>
+        </div>
+        <input type="button" value="BUTTON">
+        <input type="submit" value="SUBMIT">
+        <input type="text" id="test">
+        <input type="reset" value="RESET">
+    </form>
+
+    <div id="one">
+        <ul>
+            <li>
+                <a href="#" id="btn"> CLICK </a>
+            </li>
+        </ul>
+    </div>
+
+    <p >alksdajsd</p>
+    <script>
+        var Btn = document.getElementById('btn');
+        var one = document.getElementById('one');
+
+        // regular Event Registration
+        // ele.addEventListener('eventName', cb, capturing/bubbling);
+        
+        
+        one.addEventListener('click', function(){
+            alert(2);
+            console.log(document.getElementById('Name').value);
+        }, true);
+
+
+        Btn.addEventListener('click', demofn, false);
+
+
+        function demofn(){
+            alert(1);
+        };
+
+    
+    </script>
+
+
+
+
+</body>
+
+</html>
