@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="wraper">
+        <div id="header">
+            <h1> BILLING </h1>
+        </div>
+        <div id="formWrap">
+            <div class="itemWrap">
+                <label for="items"> ITEM NAME </label>
+                <input type="text" name="item" id="item" placeholder="item name">
+            </div>
+            <div class="itemWrap">
+                <label for="items"> HOW MANY </label>
+                <select name="" id="qty">
+                    <option value="none"> - quantity - </option>
+                    <option value="1"> 1 </option>
+                    <option value="2"> 2 </option>
+                    <option value="3"> 3 </option>
+                    <option value="4"> 4 </option>
+                    <option value="5"> 5 </option>
+                </select>
+            </div>
+            <div class="itemWrap">
+                <label for="price"> Price </label>
+                <input type="text" name="price" id="price" placeholder="Price">
+            </div>
+            <div class="itemWrap">
+                <label for="tax"> TAX </label>
+                <input type="text" name="tax" id="tax" placeholder="Tax">
+            </div>
+
+            <div class="itemWrap">
+                <button type="button" class="btn-green" id="add"> ADDITEM </button> &nbsp;&nbsp;
+                <button type="reset" class="btn-blue" id="reset"> RESET </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="displayBill">
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        SL.No
+                    </th>
+                    <th>
+                        ITEM NAME
+                    </th>
+                    <th>
+                        quantity
+                    </th>
+                    <th>
+                        TAX (%)
+                    </th>
+
+                    <th>
+                        PRICE
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="bindData">
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        SOMEX
+                    </td>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        5 (%)
+                    </td>
+                    <td>
+                        100$
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
