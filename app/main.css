@@ -56,5 +56,36 @@ select{
     background: lightblue;;
 
 }
+#displayBill{
+        width: 100%;
+        padding: 50px;
+        text-align: center;
+}
+#displayBill table{
+    width: 90%;
+    margin: auto;
+}
+#displayBill table, td,th, tr{
+    padding: 10px;
+    border: 5px solid #ccc;
+    border-collapse: collapse;
+}
 
-
+.editBtn{
+    width: 50px;
+    line-height: 30xp;
+    background: crimson;
+    color: #fff;
+    border: 0;
+    padding:8px;
+    outline: none;
+}
+.delBtn{
+    width: 50px;
+    line-height: 30xp;
+    background: green;
+    color: #fff;
+    border: 0;
+    padding:8px;
+    outline: none;
+}

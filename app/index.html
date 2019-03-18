@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
     <div id="wraper">
         <div id="header">
             <h1> BILLING </h1>
@@ -17,7 +18,7 @@
         <div id="formWrap">
             <div class="itemWrap">
                 <label for="items"> ITEM NAME </label>
-                <input type="text" name="item" id="item" placeholder="item name">
+                <input type="text" name="item" id="item" placeholder="item name" minlength="3">
             </div>
             <div class="itemWrap">
                 <label for="items"> HOW MANY </label>
@@ -32,14 +33,15 @@
             </div>
             <div class="itemWrap">
                 <label for="price"> Price </label>
-                <input type="text" name="price" id="price" placeholder="Price">
+                <input type="text" name="price" id="price" placeholder="Price" minlength="1">
             </div>
             <div class="itemWrap">
                 <label for="tax"> TAX </label>
-                <input type="text" name="tax" id="tax" placeholder="Tax">
+                <input type="text" name="tax" id="tax" placeholder="Tax" minlength="2">
             </div>
 
             <div class="itemWrap">
+                    <button type="button" class="btn-green" id="update" style="display:none"> UPDATE </button> &nbsp;&nbsp;
                 <button type="button" class="btn-green" id="add"> ADDITEM </button> &nbsp;&nbsp;
                 <button type="reset" class="btn-blue" id="reset"> RESET </button>
             </div>
@@ -66,6 +68,9 @@
                     <th>
                         PRICE
                     </th>
+                    <th>
+                        EDIT/DELETE
+                    </th>
                 </tr>
             </thead>
             <tbody id="bindData">
@@ -84,6 +89,9 @@
                     </td>
                     <td>
                         100$
+                    </td>
+                    <td>
+                        EDIT/DELETE
                     </td>
                 </tr>
             </tbody>
