@@ -10,7 +10,8 @@ var wraper = document.getElementById('wraper');
 
 var update = document.getElementById('update');
 var bindData = document.getElementById('bindData');
-
+var totalGrid = document.getElementById('totalGrid');
+var totCount = 0;
     add.onclick = function () {
         
 if (item.value == "" ){ 
@@ -22,6 +23,7 @@ if (item.value == "" ){
 }else if(tax.value == "") {
     alert('Please Enter Tax');
 } else {
+        var insertB = document.getElementById('insertB');
         var TR = document.createElement('tr');
         var slnoTD = document.createElement('td');
         slnoTD.innerText = '1';
@@ -75,7 +77,8 @@ if (item.value == "" ){
         console.log(TR);
 
 
-        bindData.appendChild(TR);
+        // bindData.appendChild(TR);
+        bindData.insertBefore(TR, insertB)
 
         // wraper.style.display = "none";
 
@@ -107,6 +110,9 @@ if (item.value == "" ){
             add.style.display = "none";     
 
 
+            
+            
+
             update.onclick = function(){
                 EditItem.innerText = item.value;
                 Editqty.innerText = qty.value;
@@ -119,11 +125,61 @@ if (item.value == "" ){
                 tax.value = "";
 
                 update.style.display = "none";
-                add.style.display = "inline";     
+                add.style.display = "inline"; 
+                
+                
+                for(var i = 0; i < bindData.children.length; i++){
+                    var x = bindData.children[i].children;
+                    if(x[4] != undefined){    
+                        var pr = x[4].innerText;
+                        pr = parseInt(pr);
+                        totCount += pr;
+                    }
+                }
     
-
             }
 
         }
+
+        delBtn.onclick = function(){
+            
+            totCount = 0;
+            var somexCount = 0;
+            var DelRow = this.parentNode.parentNode;
+            console.log(DelRow);
+            bindData.removeChild(DelRow);
+            
+            for(var j = 0; j < bindData.children.length; j++){
+                var x = bindData.children[j].children;
+                if(x[4] != undefined){    
+                    var pr1 = x[4].innerText;
+                    pr1 = parseInt(pr1);
+                    somexCount += pr1;
+                }
+            }
+s
+            totalGrid.innerText = somexCount;
+            
+        }   
+
+        for(var i = 0; i < bindData.children.length; i++){
+            var x = bindData.children[i].children;
+            if(x[4] != undefined){    
+                var pr = x[4].innerText;
+                pr = parseInt(pr);
+                totCount += pr;
+            }
+        }
+    
+    
+
+    
+
+console.log(totCount);
+totalGrid.innerText = totCount;
+
     }
 }
+ 
+
+
