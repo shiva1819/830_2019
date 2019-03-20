@@ -5,25 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
+
     <title>Document</title>
 </head>
 
 <body>
-    
+
     <div id="wraper">
         <div id="header">
             <h1> BILLING </h1>
         </div>
         <div id="formWrap">
             <div class="itemWrap">
-                <label for="items"> ITEM NAME </label>
-                <input type="text" name="item" id="item" placeholder="item name" minlength="3">
+                <!-- <label for="items"> ITEM </label> -->
+                <input type="text" name="item" id="item" placeholder="Item" minlength="3">
             </div>
             <div class="itemWrap">
-                <label for="items"> HOW MANY </label>
+                <!-- <label for="items"> QUANTITY </label> -->
                 <select name="" id="qty">
-                    <option value="none"> - quantity - </option>
+                    <option value="none"> -- QUANTITY -- </option>
                     <option value="1"> 1 </option>
                     <option value="2"> 2 </option>
                     <option value="3"> 3 </option>
@@ -32,16 +35,23 @@
                 </select>
             </div>
             <div class="itemWrap">
-                <label for="price"> Price </label>
+                <!-- <label for="price"> Price </label> -->
+                <input type="text" name="cost" id="cost" placeholder="Cost" minlength="1">
+            </div>
+            <!--<div class="itemWrap">
+                 <label for="price"> Price </label> 
                 <input type="text" name="price" id="price" placeholder="Price" minlength="1">
             </div>
-            <div class="itemWrap">
-                <label for="tax"> TAX </label>
-                <input type="text" name="tax" id="tax" placeholder="Tax" minlength="2">
-            </div>
+            -->
+            <!--
+                <div class="itemWrap">
+                    <label for="tax"> TAX </label> 
+                    <input type="text" name="tax" id="tax" placeholder="Tax" minlength="2">
+                </div>
+            -->
 
             <div class="itemWrap">
-                    <button type="button" class="btn-green" id="update" style="display:none"> UPDATE </button> &nbsp;&nbsp;
+                <button type="button" class="btn-green" id="update" style="display:none"> UPDATE </button> &nbsp;&nbsp;
                 <button type="button" class="btn-green" id="add"> ADDITEM </button> &nbsp;&nbsp;
                 <button type="reset" class="btn-blue" id="reset"> RESET </button>
             </div>
@@ -53,20 +63,23 @@
             <thead>
                 <tr>
                     <th>
-                        SL.No
+                        #NO
                     </th>
                     <th>
                         ITEM NAME
                     </th>
                     <th>
-                        quantity
+                        QUANTITY
                     </th>
                     <th>
-                        TAX (%)
+                        COST ( <i class="fas fa-rupee-sign"></i> )
+                    </th>
+                    <th>
+                        TAX (5%)
                     </th>
 
                     <th>
-                        PRICE
+                        PRICE ( <i class="fas fa-rupee-sign"></i> )
                     </th>
                     <th>
                         EDIT/DELETE
@@ -74,22 +87,43 @@
                 </tr>
             </thead>
             <tbody id="bindData">
-                
+
                 <tr id="insertB">
-                    <td colspan="4">
-                        Total: 
+                    <td colspan="4" style="text-align:right;">
+                        Total:
                     </td>
-                    <td id="totalGrid">
-                        
+                    <td id="totalGrid" colspan="2" style="text-align:right;">
+                        0.00$
                     </td>
-                    <td>
-                        <button id="save"> SAVE </button>
-                        <button id="cancel"> CANCEL </button>
+                    <td style="text-align:right;">
+                        <button id="save" disabled>  <i class="fas fa-save"></i> SAVE </button>
+                        <button id="cancel" disabled> <i class="fas fa-ban"></i> CANCEL </button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    <div id="preview" style="display:none;">
+        <div id="displayPreview">
+
+            <div id="pop-header">
+                    <div class="form-pop">
+                        <input type="radio" name="paymentMode" class="payMode" id="payModeCard" checked> CARD
+                        <input type="radio" name="paymentMode" class="payMode" id="payModeCash"> CASH 
+                    </div>
+            </div>
+
+                <div id="popcontent">
+
+                </div>
+
+            <div id="pop-footer">
+
+            </div>
+        </div>
+    </div>
+
     <script src="main.js"></script>
 </body>
 
