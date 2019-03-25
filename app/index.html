@@ -88,7 +88,7 @@
             </thead>
             <tbody id="bindData">
 
-                <tr id="insertB">
+                <!-- <tr id="insertB">
                     <td colspan="4" style="text-align:right;">
                         Total:
                     </td>
@@ -99,7 +99,7 @@
                         <button id="save" disabled>  <i class="fas fa-save"></i> SAVE </button>
                         <button id="cancel" disabled> <i class="fas fa-ban"></i> CANCEL </button>
                     </td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>
@@ -113,13 +113,28 @@
                         <input type="radio" name="paymentMode" class="payMode" id="payModeCash"> CASH 
                     </div>
             </div>
-
                 <div id="popcontent">
-
+                    <div class="creditCardWraper">
+                        <div class="formWrap text-center p-10">
+                            <input type="text" name="crediCardNo" id="crediCardNo" placeholder="Credit Card NUmber" class="w-50">
+                        </div>
+                    </div>
+                    <div class="cashWraper">
+                        <div class="formWrap text-center">
+                            <input type="text" name="cCardNo" id="cashTx" class="w-50" placeholder="CASH" disabled>
+                        </div>
+                    </div>
+                    <div class="totalItems">
+                        <table id="demo123">
+                        </table>
+                    </div>
                 </div>
 
             <div id="pop-footer">
-
+                <div class="text-center">
+                    <button type="button" class="closeBtn"> Close </button>
+                    <button type="button" class="cancelBtn"> Cancel </button>
+                </div>
             </div>
         </div>
     </div>

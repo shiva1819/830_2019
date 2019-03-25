@@ -14,8 +14,8 @@ var bindData = document.getElementById('bindData');
 var totalGrid = document.getElementById('totalGrid');
 var save = document.getElementById('save');
 var cancel = document.getElementById('cancel');
-
-
+var payModeCard = document.getElementById('payModeCard');
+var demo123 = document.getElementById('demo123');
 
 add.onclick = function () {
     var totCount = 0;
@@ -26,7 +26,7 @@ add.onclick = function () {
     } else if (cost.value == "") {
         alert('Please Enter Price');
     } else {
-        var insertB = document.getElementById('insertB');
+        
         var TR = document.createElement('tr');
         var slnoTD = document.createElement('td');
         slnoTD.innerText = '1';
@@ -88,7 +88,16 @@ add.onclick = function () {
         console.log(TR);
 
 
-        // bindData.appendChild(TR);
+        bindData.appendChild(TR);
+        var InserDataBefore = "";
+        InserDataBefore += '<tr id="insertB"><td colspan="4" style="text-align:right;">Total:</td>';
+        InserDataBefore += '<td id="totalGrid" colspan="2" style="text-align:right;">0.00$</td>';
+        InserDataBefore += '<td style="text-align:right;"><button id="save">  <i class="fas fa-save"></i> SAVE </button><button id="cancel"> <i class="fas fa-ban"></i> CANCEL </button></td></tr>';
+
+
+        bindData.innerHTML = InserDataBefore;
+        var insertB = document.getElementById('insertB');
+
         bindData.insertBefore(TR, insertB)
 
         // wraper.style.display = "none";
@@ -151,7 +160,7 @@ add.onclick = function () {
                         someyCount += pr;
                     }
                 }
-                debugger
+                
 
                 totalGrid.innerText = someyCount.toFixed(2);
 
@@ -177,15 +186,17 @@ add.onclick = function () {
             }
 
             totalGrid.innerText = somexCount.toFixed(2);
+            save.removeAttribute('disabled',"");       
+            cancel.removeAttribute('disabled',""); 
 
 
-            if(bindData.children.length > 1){
-                save.removeAttribute('disabled',"");       
-                cancel.removeAttribute('disabled',"");       
-            }else{
-                save.setAttribute('disabled',"true");       
-                cancel.setAttribute('disabled',"true");       
-            }
+            // if(bindData.children.length > 1){
+                
+                      
+            // }else{
+            //     save.setAttribute('disabled',"true");       
+            //     cancel.setAttribute('disabled',"true");       
+            // }
 
         }
 
@@ -210,10 +221,42 @@ add.onclick = function () {
             cancel.setAttribute('disabled',"true");       
         }
         var preview = document.getElementById('preview');
+        
         save.onclick = function(){
             preview.style.display = "block";
+
+            console.log(bindData);
+            
+            // var test123 = "";
+            // for(var k = 0; k < bindData.children.length; k++){
+            //     bindData.children += bindData.children[i].removeChild(bindData.children[i].lastChild)
+            // }
+            // debugger
+            // console.log(test123.toString());
+            editBtn.parentNode.style.display = "none";
+            delBtn.parentNode.style.display = "none";
+            save.parentNode.style.display = "none";
+
+            demo123.innerHTML = bindData.innerHTML;
+
+            if(payModeCard.getAttribute('checked') == true){
+                
+            }
         }
 
 
+        document.getElementsByClassName('closeBtn')[0].onclick = function(){
+            alert('Transaction Completed');
+            preview.style.display = "none";
+            bindData.innerHTML = "";
+            
+        }
+        
+        
+
+
     }
+    
+    
 }
+

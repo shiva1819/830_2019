@@ -164,6 +164,7 @@ select{
     width:75%;
     margin: 25px auto;
     height: 75vh;
+    position: relative;
     border-radius: 5px;
     background: #ccc;
     box-shadow: 0px 0px 5px 1px #000;
@@ -179,4 +180,41 @@ select{
 .form-pop .payMode{
     width: 15px;
     height:15px;
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.p-10{
+    padding: 10px;
+}
+
+#pop-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    border-top: 1px solid #fff;
+    text-align: right;
+}
+.closeBtn{
+    width: 75px;
+    line-height: 30px;
+}
+.cancelBtn{
+    width: 75px;
+    line-height: 30px;
+}
+#popcontent{
+ width: 90%;
+ margin: auto;   
+}
+.w-50{
+    width: 50%;
+}
+#crediCardNo, #cashTx{
+    line-height: 30px;padding: 5px;border-radius: 5px; border: 0px;
 }
