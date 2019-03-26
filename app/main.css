@@ -142,6 +142,9 @@ select{
     padding:8px;
     outline: none;
 }
+#save:disabled{
+    cursor:not-allowed;
+}
 #save{
     color: green;
 }   
@@ -217,4 +220,11 @@ select{
 }
 #crediCardNo, #cashTx{
     line-height: 30px;padding: 5px;border-radius: 5px; border: 0px;
+}
+.None{
+    /* display: none !important; */
+    visibility: hidden;
+}
+.tableRow{
+    visibility: visible;
 }

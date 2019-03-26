@@ -16,14 +16,21 @@ var save = document.getElementById('save');
 var cancel = document.getElementById('cancel');
 var payModeCard = document.getElementById('payModeCard');
 var demo123 = document.getElementById('demo123');
+var insertB = document.getElementById('insertB');
 
 add.onclick = function () {
+
+    insertB.className = "tableRow";
     var totCount = 0;
-    if (item.value == "") {
+    var Char = /^[a-zA-Z]+$/g;
+    var NumberReg = /^[0-9]+$/g;
+    alert(!Char.test(item.value));
+
+    if (!item.value.match(Char)) {
         alert('Please Enter Item');
     } else if (qty.value == "none") {
         alert('Please Enter quantity');
-    } else if (cost.value == "") {
+    } else if (!NumberReg.test(cost.value)) {
         alert('Please Enter Price');
     } else {
         
@@ -50,6 +57,7 @@ add.onclick = function () {
         var totalAmt = parseInt(qty.value) * parseInt(cost.value) + gst;
         priceTd.innerText = totalAmt.toFixed(2);
 
+        
 
 
         var editTd = document.createElement('td');
@@ -72,10 +80,12 @@ add.onclick = function () {
         editTd.appendChild(editBtn);
         editTd.appendChild(delBtn);
 
-
+        totalGrid.parentNode.style.display = "table-row";
 
 
         console.log(editTd);
+        debugger;
+        
 
         TR.appendChild(slnoTD);
         TR.appendChild(itemTd);
@@ -89,15 +99,16 @@ add.onclick = function () {
 
 
         bindData.appendChild(TR);
-        var InserDataBefore = "";
-        InserDataBefore += '<tr id="insertB"><td colspan="4" style="text-align:right;">Total:</td>';
-        InserDataBefore += '<td id="totalGrid" colspan="2" style="text-align:right;">0.00$</td>';
-        InserDataBefore += '<td style="text-align:right;"><button id="save">  <i class="fas fa-save"></i> SAVE </button><button id="cancel"> <i class="fas fa-ban"></i> CANCEL </button></td></tr>';
+        // var InserDataBefore = "";
+        // InserDataBefore += '<tr id="insertB"><td colspan="4" style="text-align:right;">Total:</td>';
+        // InserDataBefore += '<td id="totalGrid" colspan="2" style="text-align:right;">0.00$</td>';
+        // InserDataBefore += '<td style="text-align:right;"><button id="save">  <i class="fas fa-save"></i> SAVE </button><button id="cancel"> <i class="fas fa-ban"></i> CANCEL </button></td></tr>';
 
 
-        bindData.innerHTML = InserDataBefore;
-        var insertB = document.getElementById('insertB');
-
+        // bindData.innerHTML = InserDataBefore;
+        // var insertB = document.getElementById('insertB');
+        
+        
         bindData.insertBefore(TR, insertB)
 
         // wraper.style.display = "none";
@@ -224,39 +235,33 @@ add.onclick = function () {
         
         save.onclick = function(){
             preview.style.display = "block";
+            var previewContent = bindData.cloneNode(true);
 
-            console.log(bindData);
-            
-            // var test123 = "";
-            // for(var k = 0; k < bindData.children.length; k++){
-            //     bindData.children += bindData.children[i].removeChild(bindData.children[i].lastChild)
-            // }
-            // debugger
-            // console.log(test123.toString());
-            editBtn.parentNode.style.display = "none";
-            delBtn.parentNode.style.display = "none";
-            save.parentNode.style.display = "none";
-
-            demo123.innerHTML = bindData.innerHTML;
-
-            if(payModeCard.getAttribute('checked') == true){
-                
+            for(var k = 0; k < previewContent.children.length; k++){
+                previewContent.children[k].removeChild(previewContent.children[k].lastElementChild);
             }
-        }
+            
+            console.log(previewContent);
 
+            demo123.innerHTML = previewContent.innerHTML;
+
+        }
 
         document.getElementsByClassName('closeBtn')[0].onclick = function(){
-            alert('Transaction Completed');
             preview.style.display = "none";
-            bindData.innerHTML = "";
+            
+            for(var t=0; t < bindData.children.length; t++){
+                debugger;
+                if(bindData.children[t].id != 'insertB'){
+                    bindData.removeChild(bindData.children[t]);
+                    t--;
+                }
+                totalGrid.innerText = "$0.00";
+                insertB.className = "";
+                // insertB.className = "None";
+            }
             
         }
-        
-        
-
-
     }
-    
-    
 }
 
