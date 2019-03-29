@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li{
+            display: inline-block;
+            width: 200px;
+            border: 1px solid;
+            padding: 10px;
+            box-sizing: border-box;
+            line-height: 75px;
+        }
+        ul li img{
+            width:75px;
+            height: 75px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        
+        <input type="text" name="firstname" id="demo">
+        <br>
+        <input type="radio" name="gender" value="male" class="gender"> Male
+        <input type="radio" name="gender" value="female" class="gender"> Female 
+        <br>
+        <button type="button" id="save"> Save </button>
+    </div>
+
+    <ul id="list">
+            
+
+    </ul>
+    <script>
+    
+        // localStorage ( unkonwn ) vs sessionStorage(based on session page) - 5mb, 
+
+
+        // JSON;
+
+        // sessionStorage.setItem('Test','test');
+
+        var arr = "";
+            if(localStorage.getItem('Data') == undefined){
+                arr = []
+            }else{
+                arr = JSON.parse(localStorage.getItem('Data'));
+            }
+
+            
+            var a = "";
+            var b = "";
+
+        var demo = document.getElementById('demo');
+        var save = document.getElementById('save');
+        var list = document.getElementById('list');
+        var gender = document.getElementsByClassName('gender');
+
+        dataBind(JSON.parse(localStorage.getItem('Data')));
+
+        save.onclick = function(){
+            a = demo.value
+            var genVal = "";
+
+            for(var j = 0; j < gender.length; j++){
+                if(gender[j].checked == true){
+                    genVal = gender[j].value; 
+                }
+            }
+
+            var obj = {"Name":a, "Gender": genVal};
+
+            arr.push(obj);
+
+
+            localStorage.setItem('Data', JSON.stringify(arr));
+
+
+
+            dataBind(JSON.parse(localStorage.getItem('Data')));
+
+        }
+
+
+        function dataBind(data){
+            if(data == undefined){
+                alert('There are no Records Found...')
+            }else{
+                var cnt = "";
+                
+
+                for(var i = 0; i < data.length; i++){
+                    cnt += "<li>" + data[i].Name + "<img src='image/" + data[i].Gender.toLowerCase() +".png'></li>";
+                    console.log("<li>" + data[i].Name + "</li>");
+                }
+
+                console.log(cnt);
+                list.innerHTML =  cnt;
+            }
+        }        
+
+
+        
+        // for(var i in JSON.parse(localStorage.getItem('listNames'))){
+        //         document.querySelector('#list').innerHTML += "<li>"+ JSON.parse(localStorage.getItem('listNames'))[i].Name +"</li>"
+        //     }
+
+        // var obj = [{name:'Shiva'}];
+        // // convert obj to String;
+        // var test = JSON.stringify(obj);
+        // localStorage.setItem('x', test);
+
+
+        // // string to obj
+        // var res = localStorage.getItem('x');
+        // console.log(res);
+
+        // test = JSON.parse(res);
+        // console.log(test);
+        // console.log(typeof(test));
+
+
+        // localStorage.removeItem('x');
+        // localStorage.clear();
+
+
+        
+
+
+    </script>
+</body>
+</html>

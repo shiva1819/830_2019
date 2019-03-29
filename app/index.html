@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
 
     <title>Document</title>
@@ -96,7 +97,7 @@
                         0.00$
                     </td>
                     <td style="text-align:right;">
-                        <button id="save" disabled>  <i class="fas fa-save"></i> SAVE </button>
+                        <button id="save" disabled> <i class="fas fa-save"></i> SAVE </button>
                         <button id="cancel" disabled> <i class="fas fa-ban"></i> CANCEL </button>
                     </td>
                 </tr>
@@ -108,27 +109,36 @@
         <div id="displayPreview">
 
             <div id="pop-header">
-                    <div class="form-pop">
-                        <input type="radio" name="paymentMode" class="payMode" id="payModeCard" checked> CARD
-                        <input type="radio" name="paymentMode" class="payMode" id="payModeCash"> CASH 
-                    </div>
+                <div class="form-pop">
+                    <input type="radio" name="paymentMode" class="payMode" id="payModeCard" checked value="card"> CARD
+                    <input type="radio" name="paymentMode" class="payMode" id="payModeCash" value="cash"> CASH
+                </div>
             </div>
-                <div id="popcontent">
-                    <div class="creditCardWraper">
-                        <div class="formWrap text-center p-10">
-                            <input type="text" name="crediCardNo" id="crediCardNo" placeholder="Credit Card NUmber" class="w-50">
-                        </div>
+            <div id="popcontent">
+                <div class="creditCardWraper">
+                    <div class="formWrap text-center p-10">
+                        <input type="text" name="CustomerName" id="customerName" placeholder="Customer Name"
+                            class="w-30 inputVal">
+                        <input type="text" name="ContactNumber" id="contactNo" placeholder="Contact Number"
+                            class="w-30 inputVal">
                     </div>
-                    <div class="cashWraper">
-                        <div class="formWrap text-center">
-                            <input type="text" name="cCardNo" id="cashTx" class="w-50" placeholder="CASH" disabled>
-                        </div>
-                    </div>
-                    <div class="totalItems">
-                        <table id="demo123">
-                        </table>
+                    <div class="formWrap text-center p-10">
+
                     </div>
                 </div>
+                <div class="cashWraper">
+                    <div class="formWrap text-center">
+                        <input type="text" name="Email" id="Email" placeholder="Email" class="w-50 inputVal">
+                        <input type="text" name="crediCardNo" id="crediCardNo" placeholder="Credit Card NUmber"
+                            class="w-50 inputVal">
+                        <input type="text" name="cCardNo" id="cashTx" class="w-50 inputVal" placeholder="CASH" disabled>
+                    </div>
+                </div>
+                <div class="totalItems">
+                    <table id="demo123">
+                    </table>
+                </div>
+            </div>
 
             <div id="pop-footer">
                 <div class="text-center">

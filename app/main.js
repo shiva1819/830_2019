@@ -255,10 +255,13 @@ add.onclick = function () {
                 if(bindData.children[t].id != 'insertB'){
                     bindData.removeChild(bindData.children[t]);
                     t--;
+                }else{
+                    document.querySelector
                 }
                 totalGrid.innerText = "$0.00";
                 insertB.className = "";
                 // insertB.className = "None";
+                save.setAttribute('disabled', true);
             }
             
         }

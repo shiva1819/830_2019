@@ -218,8 +218,8 @@ select{
 .w-50{
     width: 50%;
 }
-#crediCardNo, #cashTx{
-    line-height: 30px;padding: 5px;border-radius: 5px; border: 0px;
+.inputVal{
+    line-height: 30px;padding: 5px;border-radius: 5px; border: 0px; margin-top: 10px;
 }
 .None{
     /* display: none !important; */
@@ -227,4 +227,13 @@ select{
 }
 .tableRow{
     visibility: visible;
+}
+.w-30{
+    width: 30%;
+}
+#demo123{
+    width:100%;
+}
+#demo123 #totalGrid{
+    text-align: center !important;
 }
