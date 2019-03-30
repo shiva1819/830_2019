@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var demo123;
+
+        var obj = {name:"Shiva", salary:20000};
+
+
+        function test(msg,age){
+            console.log(msg + " " + this.salary + " is your age " + age);
+        }
+
+        function demo(greet){
+            console.log(greet + " "+ this.name);
+        }
+
+    // call,apply & bind;
+
+    // test.call(obj,"Hello", 30);
+    // demo.call(obj,"Hello");
+    var arr = ['hai'];
+    // demo.apply(obj,arr);
+    
+    var t1 =  demo.bind(obj,'Good Morning');
+
+    // t1();
+
+// ------------------------------------------------------------
+    // Hoisting, closure, Encapsualtion
+
+
+        function test12(name){
+            var age = 30;
+
+            function test34(){
+                console.log(age + "--" + name);
+            }
+            test34();
+        }
+
+        // console.log(age);
+        // test12('tester...');
+
+       var EnCode = (function(){
+            var age = 50;
+            var obj = {contact:1231231231, age:age};
+            return obj['age'];
+        });
+
+        // EnCode().contact
+
+        // console.log(EnCode().age);
+        // console.log(age);
+
+
+// --------------------------------------------------------
+
+        var obj1 = {
+           name:"x",
+           age:30,
+           getInfo:function(){
+                return this.name + "-" + this.age;
+            }   
+        }
+
+
+        function person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+
+
+        person.prototype.fullName = function(){
+                return this.name + "--" + this.age;
+        }
+
+
+        function emp(name,age,salary){
+            person.call(this,name,age);
+            this.salary = salary;
+        }
+
+        
+        emp.prototype = new person();
+
+
+
+        // person.prototype.salary = 12121;
+
+         var p1 = new person('shiva',30);
+         var p2 = new emp('Prasad', 35, 10000);
+         console.log(p2);
+
+        // var obj1 = new String();
+                 
+    
+    </script>
+</body>
+</html>
