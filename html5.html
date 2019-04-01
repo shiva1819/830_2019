@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        figcaption[data-figCaption = "someDemo"]{
+            background: red;
+        }
+        #vid{
+            width: 100%;
+            position: absolute;
+            z-index: -10;
+            left: 0px;
+            top: 0px;
+            opacity: 0.2;
+        }
+        
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <header data-mainHeader="asdasda"></header>
+
+    <!-- main, header, nav, article, section, aside, figure, figcaption, footer, hgroup -->
+    <!-- logo,  -->
+
+    <main>
+        <header id="mainHeader"></header>
+
+        <article>
+            <section>
+                <header>Sub Header </header>
+                    <article>
+                        some content
+                    </article>
+                <footer> Sub Footer </footer>
+            </section>
+            <aside id="rightSide">
+
+
+            </aside>
+        </article>
+
+
+        <figure>
+            <!-- <img src="link" alt="linkText"> -->
+            <figcaption data-figCaption="someDemo"> aksdbajksd </figcaption>
+        </figure>
+        
+        <logo> asdkasdjh </logo>    
+    </main>
+
+
+    <video id="vid" muted>
+        <source src="./vid.mp4" type="video/mp4">
+        <source src="./vid.ogg" type="video/ogg">
+        your browser is not supporting video
+    </video>
+
+    <audio id="aud" loop>
+        <source src="./aud.mp3" type="audio/mp3"> 
+    </audio>
+    <button id="btn" type="button"> play </button>
+    <script>
+        var btn = document.getElementById('btn');
+        var vid = document.getElementById('aud');
+            btn.onclick = function(){
+
+                if(vid.paused == true){
+                    vid.play();
+                    this.innerText = "pause";
+                }else{
+                    vid.pause();
+                    this.innerText = "play";
+                }
+            }
+    </script>
+
+</body>
+</html>
