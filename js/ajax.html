@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- AJAX - GET,POST,PUT, DELETE -->
+    <!-- Sync, Async -->
+    <button id="demobnt" type="button" data-href="oojs.html"> OOJS </button>  
+    <div id="demo"> Hello </div> 
+    <script>
+        
+        var demo = document.getElementById('demo');
+        
+        var demobnt = document.getElementById('demobnt');
+            
+        demobnt.onclick = function(){
+            var datHref = demobnt.getAttribute('data-href');
+        
+        var http = new XMLHttpRequest();
+//            debugger;
+            http.onreadystatechange = function(){
+                demo.innerHTML = this.responseText;
+//                if(this.readyState == "4" && this.status == "200"){
+//                    console.log(this);
+//                    
+//                    // console.log(JSON.parse(this.response)[0].name);
+//                }
+            }   
+
+
+        http.open('GET',datHref,true);
+        http.send();
+            }
+    </script>
+</body>
+</html>
