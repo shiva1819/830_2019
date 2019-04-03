@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+section{
+    display: flex;
+    height: 100vh;
+    border: 1px  solid;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+    flex-direction: column-reverse;
+}
+section article{
+    border: 1px solid red;
+    width: 20%;
+}
+#one{
+    order: 3;
+    /* flex: 1; */
+}
+
+#two{
+    order: 1;
+    /* flex: 1; */
+}
+
+#three{
+    order: 1;
+    /* flex: 2; */
+}
