@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono|IBM+Plex+Sans+Condensed|IBM+Plex+Sans:400,700|IBM+Plex+Serif" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+    <main class="mainWrap dflex">
+        <aside class="mainNav w20 bgCCC he100vh pofix ">
+            <div class="logo m-10">
+                 <button>  </button>
+                <h1 class="text-center fs40 pt-10 m-10">
+                    SIVA
+                </h1>
+            </div>
+            <nav class="mainMenu">
+                <ul class="fs18">
+                    <li>
+                        <i class="fas fa-home"></i> <a href="#main" data-url="#main"> HOME </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-address-card"></i> <a href="#about" data-url="#about"> ABOUT </a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-square"></i> <a href="#contact" data-url="#contact"> CONTACT </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <aside class="mainConten w80">
+            <article class="home he100vh" id="main"> 
+                THIS IS HOME
+                <p id="demo11"></p>
+            </article>
+            <article class="home he100vh" id="about">
+                THIS IS ABOUT
+            </article>
+            <article class="home he100vh" id="contact">
+                THIS IS CONTACT
+            </article>
+        </aside>
+    </main>
+    <script>
+        console.log($('#main').offset());
+        // $('body,html').animate({scrollTop:});
+
+        $('ul li a').click(function(){
+            console.log($($(this).attr('href')).offset());
+
+            $('body, html').animate({scrollTop:$($(this).attr('href')).offset().top},500);
+
+        }); 
+        
+        
+
+        // console.log($('a').parentsUntil('ul'));
+
+        // parent() - 1, parents() -all,
+
+        console.log($('ul').find('li').eq(0));
+        // $('#name').keyup(function(){
+        //     $('#demo11').html($(this).val())
+        // });
+
+        
+
+    </script>
+</body>
+</html>

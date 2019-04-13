@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        ul li {
+            display: inline-block;
+        }
+        section{
+            display: none;
+        }
+        .active{
+            color:#fff;
+            background: crimson;
+            text-decoration: none;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>
+            <a href="#home"> HOME </a>
+        </li>
+        <li>
+            <a href="#about"> ABOUT </a>
+        </li>
+        <li>
+            <a href="#gallery"> GALLERY </a>
+        </li>
+        <li>
+                <a href="#contact"> CONTACT </a>
+            </li>
+    </ul>
+
+    <article>
+        <section id="home">
+            HOME SECTION
+        </section>
+        <section id="about">
+            ABOUT SECTION
+        </section>
+        <section id="gallery">
+            GALLERY SECTION
+        </section>
+        <section id="contact">
+            CONTACT SECTION
+        </section>
+    </article>
+    <p id="demo111"></p>
+
+<script>
+
+    var jq = $.noConflict();
+    jq('ul li a').click(function(){
+        // debugger
+        jq('ul li a').removeClass('active');
+        jq(this).parent().prev().children().addClass('active');
+        jq('section').hide();
+        jq(jq(this).attr('href')).show();
+    });
+
+    jq('#demo111').load('./main.html');
+</script>
+</body>
+
+</html>
